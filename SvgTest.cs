@@ -50,34 +50,34 @@ public class OitLogoSvg
         var points = new List<Tuple<double, double>>();
         for (var i = 0; i <= N1; i++)
         {
-            double theta = angle1 + (angle2 - angle1) * i / N1;
-            double x = (radius + weight / 2) * Math.Cos(theta) + ox;
-            double y = (radius + weight / 2) * -Math.Sin(theta) + oy;
+            var theta = angle1 + (angle2 - angle1) * i / N1;
+            var x = (radius + weight / 2) * Math.Cos(theta) + ox;
+            var y = (radius + weight / 2) * -Math.Sin(theta) + oy;
             points.Add(Tuple.Create<double, double>(x, y));
         }
         for (var i = 1; i < N2; i++)
         {
-            double px = radius * Math.Cos(angle2) + ox;
-            double py = radius * -Math.Sin(angle2) + oy;
-            double theta = angle2 + Math.PI * i / N2;
-            double x = weight / 2 * Math.Cos(theta) + px;
-            double y = weight / 2 * -Math.Sin(theta) + py;
+            var px = radius * Math.Cos(angle2) + ox;
+            var py = radius * -Math.Sin(angle2) + oy;
+            var theta = angle2 + Math.PI * i / N2;
+            var x = weight / 2 * Math.Cos(theta) + px;
+            var y = weight / 2 * -Math.Sin(theta) + py;
             points.Add(Tuple.Create<double, double>(x, y));
         }
         for (var i = 0; i <= N1; i++)
         {
-            double theta = angle2 + (angle1 - angle2) * i / N1;
-            double x = (radius - weight / 2) * Math.Cos(theta) + ox;
-            double y = (radius - weight / 2) * -Math.Sin(theta) + oy;
+            var theta = angle2 + (angle1 - angle2) * i / N1;
+            var x = (radius - weight / 2) * Math.Cos(theta) + ox;
+            var y = (radius - weight / 2) * -Math.Sin(theta) + oy;
             points.Add(Tuple.Create<double, double>(x, y));
         }
         for (var i = 1; i < N2; i++)
         {
-            double px = radius * Math.Cos(angle1) + ox;
-            double py = radius * -Math.Sin(angle1) + oy;
-            double theta = angle1 + Math.PI + Math.PI * i / N2;
-            double x = weight / 2 * Math.Cos(theta) + px;
-            double y = weight / 2 * -Math.Sin(theta) + py;
+            var px = radius * Math.Cos(angle1) + ox;
+            var py = radius * -Math.Sin(angle1) + oy;
+            var theta = angle1 + Math.PI + Math.PI * i / N2;
+            var x = weight / 2 * Math.Cos(theta) + px;
+            var y = weight / 2 * -Math.Sin(theta) + py;
             points.Add(Tuple.Create<double, double>(x, y));
         }
         return points.ToArray();
